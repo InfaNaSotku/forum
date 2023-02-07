@@ -7,7 +7,7 @@ forum = Flask(__name__)
 
 @forum.route("/")
 def index():
-    return "<p>Hi!</p>"
+    return render_template("index.html")
 
 
 
