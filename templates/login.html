@@ -3,6 +3,9 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+{% if error %}
+    <font color="red"><center>Incorrect password!</center></font>
+{% endif %}
 <form action="" method="post">
     <center><p>Enter your login:</p></center>
     <center><input type="text" name="username" required></center>
