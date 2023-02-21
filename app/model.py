@@ -1,9 +1,9 @@
 from app import db
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, nullable=False)
     username = db.Column(db.String, unique=True, nullable=False)
-    password = db.Column(db.String, unique=True, nullable=False)
+    password = db.Column(db.String, nullable=False)
     questions = db.relationship('Question', backref='user', lazy=True)
     Comments = db.relationship('Comment', backref='user', lazy=True)
 class Question(db.Model):
@@ -19,3 +19,4 @@ class Comment(db.Model):
     date = db.Column(db.DateTime)
     question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
