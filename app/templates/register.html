@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% block content %}
 {% if error %}
@@ -9,7 +9,7 @@
     <form action="" method="post">
         <center>
             <fieldset style="width:20px">
-                <legend>Authentication</legend>
+                <legend>Registration</legend>
                 <p>
                     <label for="username">Username:</label>
                     <input type="text" name="username" id="username" required>
@@ -17,6 +17,10 @@
                 <p>
                     <label for="password">Password:</label>
                     <input type="text" name="password" id="password" required>
+                </p>
+                <p>
+                    <label for="confirm password">Confirm password:</label>
+                    <input type="text" name="confirm password" id="confirm password" required>
                 </p>
                 <p><input type="submit" value="Submit"></p>
             </fieldset>
