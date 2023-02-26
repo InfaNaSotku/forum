@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
+ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
+                 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.header{
+   
+}
+
+.header .hat{
+    padding: 15px 15px 15px 5px;
+    clear: both;
+}
+
+.header .hat img{
+    float: left;
+    vertical-align: middle;
+}
+
+.header .hat h1{
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+}
+
+.header .nav{
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.header .nav li{
+    float: left;
+    list-style: none;   
+}
+
+.header .nav a{
+    display: block;
+    color: black;
+    padding: 10px 25px;
+    text-decoration: none;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.header .nav a:hover{
+    background-color: #ededed;
+}
+
+.nav:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.main{
+    clear: both;
+    min-height: 500px;
+}
+
+.main fieldset{
+    border-radius: 20px;
+}
+
+.footer{ 
+    border-top: 1px solid #2a2a2a;  
+    position: relative;
+    padding: 10px 10px 30px 10px;
+}
+
+.footer .page_down{
+    position: absolute;
+    left: 42%;
+}
+
+.footer img
+{
+    width: 12px;
+    float: left;
+}
+
+.footer p{
+    display: inline;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+
