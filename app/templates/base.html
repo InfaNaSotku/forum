@@ -1,22 +1,37 @@
 <head>
-    <title>{% block title %}{% endblock %} - page</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
     {% block head %}
     {% endblock %}
 </head>
 <body>
-    <header>
-        <h1>Navigation</h1>
-        <nav>
+    <div class="header">
+        <div class="hat">
+            <img src="{{ url_for('static', filename='img/logo.png') }}">
+            <h1>Ответ на сотку!</h1>
+        </div>
+        <div class="nav">
             <ul>
                 <li><a href="{{ url_for('main.index') }}">Home</a></li>
                 <li><a href="{{ url_for('auth.login') }}">Sign in</a></li>
-                <li><a href="{{ url_for('auth.register')}}">Sign up</a></li>
                 <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
                 <li><a href="{{ url_for('auth.delete') }}">Delete user</a></li>
             </ul>
-           
-        </nav>
-    </header>
-    {% block content %}
-    {% endblock content %}
+        </div>
+    </div>
+
+    <div class="main">
+        {% block main %}
+        {% endblock %}
+    </div>
+
+
+    <div class="footer">
+        <div class="page_down">
+            <img src="{{ url_for('static', filename='img/logo.png') }}">
+            <p>Contacts: InfaNaSotku@gmail.com</p>
+        </div>
+    </div>
+
+
 </body>

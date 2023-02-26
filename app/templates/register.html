@@ -2,7 +2,7 @@
 
 {% block title %}Register{% endblock %}
 
-{% block content %}
+{% block main %}
 {% if error %}
     <font color="red"><center>{{ error }}!</center></font>
 {% endif %}
@@ -16,14 +16,14 @@
                 </p>
                 <p>
                     <label for="password">Password:</label>
-                    <input type="text" name="password" id="password" required>
+                    <input type="password" name="password" id="password" required>
                 </p>
                 <p>
                     <label for="confirm password">Confirm password:</label>
-                    <input type="text" name="confirm password" id="confirm password" required>
+                    <input type="password" name="confirm password" id="confirm password" required>
                 </p>
                 <p><input type="submit" value="Submit"></p>
             </fieldset>
-    </center>
+        </center>
     </form>
 {% endblock %}
