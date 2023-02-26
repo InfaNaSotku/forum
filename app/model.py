@@ -9,13 +9,13 @@ class User(db.Model):
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, unique=True, nullable=False)
-    content = db.Column(db.Text, unique=True, nullable=False)
+    content = db.Column(db.Text, nullable=False)
     date = db.Column(db.DateTime)
     Comments = db.relationship('Comment', backref='question', lazy=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 class Comment(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.Text, unique=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True, nullable=False)
+    content = db.Column(db.Text, nullable=False)
     date = db.Column(db.DateTime)
     question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)

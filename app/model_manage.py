@@ -19,7 +19,7 @@ def delete_user(username : str):
 def get_user(username : str) -> bool:
     return User.query.filter_by(username=username).first()
 
-def add_question(title : str, content=""):
+def add_question(title : str, content=''):
     question = Question(
         title = title,
         content = content,
@@ -29,3 +29,9 @@ def add_question(title : str, content=""):
     db.session.add(question)
     db.session.commit()
     return question
+
+def get_question(title=None, id=None):
+    if title:
+        return Question.query.filter_by(title=title).first()
+    else:
+        return Question.query.filter_by(id=id).first()

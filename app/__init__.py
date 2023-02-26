@@ -16,9 +16,10 @@ def create_app(config_forum):
 
     from .main import main
     from .auth import auth
-    
+    from .question import question
+
     app.register_blueprint(main, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/auth')
-
+    app.register_blueprint(question, url_prefix='/question')
 
     return app
