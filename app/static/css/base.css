@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, dl, dt, dd, 
 ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
@@ -11,8 +12,14 @@ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
     vertical-align: baseline;
 }
 
+html{
+    background-image: url('../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 .header{
-   
+    
 }
 
 .header .hat{
@@ -22,18 +29,18 @@ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
 
 .header .hat img{
     float: left;
-    vertical-align: middle;
 }
 
 .header .hat h1{
+    color: black;
     padding: 0;
     margin: 0;
     font-size: 40px;
 }
 
 .header .nav{
-    border-top: 1px solid #2a2a2a;
-    border-bottom: 1px solid #2a2a2a;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .header .nav li{
@@ -46,7 +53,7 @@ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
     color: black;
     padding: 10px 25px;
     text-decoration: none;
-    border: 1px solid #2a2a2a;
+    border: 2px solid black;
     border-radius: 20px;
     margin: 5px;
 }
@@ -65,13 +72,8 @@ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
     clear: both;
     min-height: 500px;
 }
-
-.main fieldset{
-    border-radius: 20px;
-}
-
 .footer{ 
-    border-top: 1px solid #2a2a2a;  
+    border-top: 2px solid black;  
     position: relative;
     padding: 10px 10px 30px 10px;
 }
@@ -88,10 +90,16 @@ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
 }
 
 .footer p{
+    color: black;
     display: inline;
     padding: 0;
     margin: 0;
     font-size: 12px;
 }
 
+.footer .bg-href a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
 

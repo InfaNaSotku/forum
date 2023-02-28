@@ -1,5 +1,5 @@
 <head>
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
     {% block head %}
     {% endblock %}
@@ -7,7 +7,6 @@
 <body>
     <div class="header">
         <div class="hat">
-            <img src="{{ url_for('static', filename='img/logo.png') }}">
             <h1>Ответ на сотку!</h1>
         </div>
         <div class="nav">
@@ -23,14 +22,16 @@
     <div class="main">
         {% block main %}
         {% endblock %}
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </div>
 
 
     <div class="footer">
         <div class="page_down">
-            <img src="{{ url_for('static', filename='img/logo.png') }}">
-            <p>Contacts: InfaNaSotku@gmail.com</p>
+            <p>Contacts: InfaNaSotku@gmail.com</p><br>
         </div>
+        <p class="bg-href">Изображение от <a href="https://ru.freepik.com/free-vector/gradient-white-monochrome-background_15782163.htm#query=white%20background%20full%20hd&position=48&from_view=search&track=robertav1">Freepik</a></p>
     </div>
 
 

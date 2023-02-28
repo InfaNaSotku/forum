@@ -2,24 +2,33 @@
 
 {% block title %}Login{% endblock %}
 
+{% block head %}
+<link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
 {% if error %}
     <font color="red"><center>{{ error }}!</center></font>
 {% endif %}
-    <form action="" method="post">
-        <center>
-            <fieldset style="width:20px">
-                <legend>Authentication</legend>
-                <p>
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" required>
-                </p>
-                <p>
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" required>
-                </p>
-                <p><input type="submit" value="Submit"></p>
-            </fieldset>
-    </center>
-    </form>
+<section class="form">
+    <div class="form-box">
+        <form action="" method="post">
+            <h2>Sign in</h2>
+            <div class="inputbox">
+                <ion-icon name="person-outline"></ion-icon>
+                <input type="text" name="username" id="username" required>
+                <label for="username">Username:</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="password" id="password" required>
+                <label for="password">Password:</label>
+            </div>
+            <input type="submit" value="Submit">
+            <div class="register-redirect">
+                <p>Don't have an account <a href="{{ url_for('auth.register') }}">Register</a></p>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock %}

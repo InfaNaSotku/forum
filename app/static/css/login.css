@@ -1,0 +1,101 @@
+section[class=form]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+section[class=form] .form-box{
+    background: transparent;
+    position: relative;
+    display: flex;
+    transform: translateY(-40%);
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+section[class=form] .form-box h2{
+    text-align: center;
+    font-size: 20px;
+}
+
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid black;
+}
+
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    top: 20px;
+    font-size: 1.2em;
+}
+
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputbox input:focus~label,
+.inputbox input:valid~label{
+    top: -5px;
+}
+
+.inputbox input{
+    width: 100%;
+    background: transparent;
+    height: 50px;
+    margin-bottom: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+
+}
+
+input[type=submit]{
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 40px;
+    border: 2px solid black;
+    cursor: pointer;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    background-color:white;
+    color: black;
+    transition: transform .2s;
+}
+
+input[type=submit]:hover{
+    transform: scale(105%);
+}
+
+.form-box .register-redirect{
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.form-box .register-redirect p a{
+    text-decoration: none;
+    font-weight: 600;
+    color: black
+}
+
+.form-box .register-redirect p a:hover{
+    text-decoration: underline;
+}
