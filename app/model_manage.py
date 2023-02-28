@@ -13,6 +13,9 @@ def add_user(username : str, password : str):
     return user
 
 def delete_user(username : str):
+    questions = User.query.filter_by(username=username).first().questions
+    for question in questions:
+        delete_question(question=question)
     db.session.delete(User.query.filter_by(username=username).first())
     db.session.commit()
 
@@ -29,6 +32,12 @@ def add_question(title : str, content=''):
     db.session.add(question)
     db.session.commit()
     return question
+
+def delete_question(title=None, question=None):
+    if question:
+        db.session.delete(question)
+    else:
+        db.session.delete(Question.query.filter_by(title=title).first())
 
 def get_question(title=None, id=None):
     if title:
