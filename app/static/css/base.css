@@ -18,17 +18,8 @@ html{
     background-size: 100%;
 }
 
-.header{
-    
-}
-
 .header .hat{
     padding: 15px 15px 15px 5px;
-    clear: both;
-}
-
-.header .hat img{
-    float: left;
 }
 
 .header .hat h1{
@@ -59,7 +50,7 @@ html{
 }
 
 .header .nav a:hover{
-    background-color: #ededed;
+    backdrop-filter: brightness(105%);
 }
 
 .nav:after {

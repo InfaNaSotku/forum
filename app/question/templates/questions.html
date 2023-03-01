@@ -2,14 +2,26 @@
 
 {% block title %}Questions{% endblock %}
 
+{% block head %}
+<link href="{{ url_for('static', filename='css/questions.css') }}" rel="stylesheet">
+{% endblock %}
 
 
 {% block main %}
-<h1>Questions:</h1>
-<a href="{{ url_for('question.add') }}" class="addButton">Add question</a>
 
-{% for question in questions %}
-<a href="{{ url_for('question.page', page_id=question.id) }}" >{{ question.title }}</a>
-{% endfor %}
+<section>
+    <a href="{{ url_for('question.add') }}" class="add-button">Add question</a>
+    <h1>Questions:</h1>
+    <l class="questions">
+        {% for i, question in zip(range(1, len(questions) + 1), questions) %}
+        <li onclick="location.href='{{ url_for('question.page', page_id=question.id) }}';">
+            <h2>{{ i }}. {{ question.title }}</h2>
+            <p>{{ question.date.strftime("%d-%m-%Y %H:%M:%S") }}</p>
+        </li>
+        {% endfor %}
+    </ul> 
+</section>
+
+
 
 {% endblock %}
