@@ -2,8 +2,57 @@
 
 {% block title %}Question {{ question.id }}{% endblock %}
 
+{% block head %}
+<link href="{{ url_for('static', filename='css/question_page.css') }}" rel="stylesheet">
+{% endblock %}
+
 
 {% block main %}
 
-<p>{{ question.content }}</p>
-{% endblock %}
+<section>
+
+    <div class="question">
+
+        <div class="title">
+            <h1>{{ question.title }}</h1>
+            {% if question_edit %}
+            <a href="{{ url_for('question.edit', page_id=question.id) }}"><ion-icon name="create-outline"></ion-icon></a>
+            {% endif %}
+        </div>
+        
+        <div class="content">
+            <p>{{ question.content }}</p>
+        </div>
+
+        <p class="time">Published: {{ question.date.strftime("%d-%m-%Y %H:%M:%S") }}</p>
+    </div>
+
+    <div class="comments">
+
+        <form action="" method="post" class="add-comment">
+            <textarea name="content"></textarea>
+            <input type="submit" name="submit" value="Add comment">
+        </form>
+
+
+        {% for comment in question.comments %}
+        <div class="comment">
+            <div class="comment-head">
+                <div class="wrap">
+                    {% if comment.user.username ==  current_username %}
+                    <a href="{{ url_for('question.delete_comment', page_id=question.id, comment_id=comment.id) }}"><ion-icon name="close-circle-outline"></ion-icon></ion-icon></a>
+                    {% endif %}
+                    <p class="time">{{ comment.date.strftime("%d-%m-%Y %H:%M:%S") }}</p>
+                </div>
+                <p class="author">{{ comment.user.username }}</p>
+            </div>
+            <p class="content">{{ comment.content }}</p>
+        </div>
+        {% endfor %}
+        
+
+    </div>
+
+</section>
+
+{% endblock %}  

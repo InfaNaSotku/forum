@@ -1,0 +1,181 @@
+
+
+section{
+    background-size: 100%;
+
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.question{
+    background-color: rgba(145, 145, 145, 0.651);
+    width: 85%;
+    border: 5px solid rgba(12, 12, 12, 0.211);
+    border-radius: 20px;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+
+
+
+.question .title{
+
+    display: flex;
+    align-self: center;
+}
+
+.question h1{
+    background-color: white;
+    padding: 8px;
+    border-radius: 20px 20px 0 0;
+    font-size: 25px;
+    margin-bottom: 10px;
+
+    align-self: center;
+}
+
+.question ion-icon{
+    font-size: 45px;
+    color: white;
+
+    transition: transform .2s;
+}
+
+.question ion-icon:hover{
+    transform: scale(105%);
+}
+
+
+
+.question .content{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+    padding: 8px;
+
+}
+
+
+
+
+.question p[class="time"]{
+    color: white;
+
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 17px;
+}
+
+
+
+
+
+.comments{
+    margin-top: 10px;
+    margin-right: 7.5%;
+    width: 38%;
+
+
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.comments form[class="add-comment"]{
+    width: 100%;
+
+    display: flex;
+}
+
+.comments form[class="add-comment"] textarea{
+    width: 100%;
+    resize: none;
+    border: 5px solid rgba(12, 12, 12, 0.211); 
+    outline: none;
+    text-align: justify
+}
+
+
+.comments input[value="Add comment"]{
+    width: 50%;
+    border: 5px solid rgba(12, 12, 12, 0.211); 
+    border-radius: 20px;
+    margin-left: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color:white;
+    color: black;
+    transition: transform .2s;
+}
+
+.comments input[value="Add comment"]:hover{
+    transform: scale(105%);
+}
+
+
+
+.comments .comment{
+    border: 5px solid rgba(12, 12, 12, 0.211);
+    border-radius: 20px;
+    background-color: white;
+    padding: 8px;
+    width: 100%;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.comment ion-icon{
+    cursor: pointer;
+    color: black;
+    font-size: 17px;
+
+    transition: transform .2s;
+}
+
+.comment ion-icon:hover{
+    transform: scale(105%);
+}
+
+.comment .comment-head{
+    width: 100%;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.comment p[class="time"]{
+   font-size: 12px;
+
+}
+
+.comment p[class="author"]{
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-left: auto;
+}
+
+.comment p[class="content"]{
+    text-align: justify
+}

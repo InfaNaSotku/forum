@@ -12,8 +12,9 @@ def create_app(config_forum):
     app.config.from_object(config_forum)
 
     bcrypt.init_app(app)
-
     db.init_app(app)
+
+
     with app.app_context():
         migrate.init_app(app, db)
 
@@ -25,5 +26,8 @@ def create_app(config_forum):
     app.register_blueprint(main, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/auth')
     app.register_blueprint(question, url_prefix='/question')
+
+    app.jinja_env.globals.update(zip=zip)
+    app.jinja_env.globals.update(len=len)
 
     return app

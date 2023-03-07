@@ -14,7 +14,7 @@ ol, ul, li, form, table, caption, tr, th, td, article, aside, footer, header{
 
 html{
     background-image: url('../img/bg.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
 }
 

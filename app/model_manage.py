@@ -34,13 +34,44 @@ def add_question(title : str, content=''):
     return question
 
 def delete_question(title=None, question=None):
-    if question:
-        db.session.delete(question)
-    else:
-        db.session.delete(Question.query.filter_by(title=title).first())
+    if not question:
+        question = Question.query.filter_by(title=title).first()
+
+    comments = question.comments
+    for comment in comments:
+        delete_comment(id=comment.id)
+    db.session.delete(question)
+    db.session.commit()
 
 def get_question(title=None, id=None):
     if title:
         return Question.query.filter_by(title=title).first()
     else:
         return Question.query.filter_by(id=id).first()
+    
+def update_question(question : Question, title : str, content : str):
+    question.content = content
+    question.title = title
+    db.session.commit()
+
+def add_comment(content : str, question : Question):
+    comment = Comment(
+        content=content,
+        date = datetime.now(),
+        user = User.query.filter_by(username=session['username']).first(),
+        question = question
+    )
+    db.session.add(comment)
+    db.session.commit()
+    return comment
+
+def get_comment(id: int):
+    return Comment.query.filter_by(id=id)
+
+def delete_comment(id : int):
+    db.session.delete(Comment.query.filter_by(id=id).first())
+    db.session.commit()
+
+def update_comment(comment : Comment, content : str):
+    comment.content = content
+    db.session.commit()
