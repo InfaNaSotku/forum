@@ -66,18 +66,12 @@ html{
 .footer{ 
     border-top: 2px solid black;  
     position: relative;
-    padding: 10px 10px 30px 10px;
-}
+    
 
-.footer .page_down{
-    position: absolute;
-    left: 42%;
-}
-
-.footer img
-{
-    width: 12px;
-    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer p{
@@ -88,9 +82,19 @@ html{
     font-size: 12px;
 }
 
+.footer .bg-href{
+    align-self: flex-start;
+    transform: translate(5px, 12px);
+}
+
+.footer .contacts{
+
+}
+
 .footer .bg-href a{
     text-decoration: none;
     color: black;
     font-weight: bold;
+
 }
 

@@ -2,7 +2,20 @@
 
 {% block title %}Index{% endblock %}
 
+{% block head %}
+<link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
-<center><h2>Hi, {{ username }}!</h2></center>
-<center><h3><a href="{{ url_for('question.index') }}">Go to questions</a></h3></center>
+<section>
+    <h2>Hi, {{ username }}!</h2>
+    <div class="wrap"  onclick="location.href='{{ url_for('question.index') }}';">
+        <p>Questions</p>
+        <div class="ring">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+ </section>
 {% endblock %}
